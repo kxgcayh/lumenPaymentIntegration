@@ -20,12 +20,23 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-// Products Route
+$router->group(['prefix' => 'api'], function () use ($router) {
+    // Authentication
+    $router->post('register', 'AuthController@register');
+    $router->post('login', 'AuthController@login');
+    $router->post('logout', 'AuthController@logout');
+    // Profile
+    $router->get('profile', 'UserController@profile');
+    // User
+    $router->get('users/{id}', 'UserController@singleUser');
+    $router->get('users', 'UserController@allUsers');
 
-$router->group(['prefix' => '/product'], function () use ($router) {
-    $router->get('/', 'ProductController@index');
-    $router->post('/create', 'ProductController@create');
-    $router->get('/detail/{id}', 'ProductController@show');
-    $router->put('/update/{id}', 'ProductController@update');
-    $router->delete('/delete/{id}', 'ProductController@delete');
+    // Products Route
+    $router->group(['prefix' => 'product'], function () use ($router) {
+        $router->get('/', 'ProductController@index');
+        $router->post('/create', 'ProductController@create');
+        $router->get('/detail/{id}', 'ProductController@show');
+        $router->put('/update/{id}', 'ProductController@update');
+        $router->delete('/delete/{id}', 'ProductController@delete');
+    });
 });
