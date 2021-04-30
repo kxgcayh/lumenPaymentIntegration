@@ -25,11 +25,10 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->post('register', 'AuthController@register');
     $router->post('login', 'AuthController@login');
     $router->post('logout', 'AuthController@logout');
-    // Profile
-    $router->get('profile', 'UserController@profile');
     // User
-    $router->get('users/{id}', 'UserController@singleUser');
-    $router->get('users', 'UserController@allUsers');
+    $router->get('profile', 'UserController@profile');
+    $router->get('users', 'UserController@index');
+    $router->post('user', 'UserController@show');
 
     // Products Route
     $router->group(['prefix' => 'product'], function () use ($router) {
