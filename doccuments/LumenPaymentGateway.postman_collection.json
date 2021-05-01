@@ -1,0 +1,516 @@
+{
+	"info": {
+		"_postman_id": "4007f037-bc5a-4939-b42d-0cbb48ede7b1",
+		"name": "Lumen Payment Gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User - List All",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxOTgxMTczMSwiZXhwIjoxNjE5ODE1MzMxLCJuYmYiOjE2MTk4MTE3MzEsImp0aSI6IjdnVkFMZVVoUHQ4czIxdjUiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.vSk_yjSAuH52VG0S6v9qDo1zQd0VxpNhHqT8D2HivCY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "List All User"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Kautsar Al Bana",
+							"description": "Full Name",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "kautsaralbaa@gmail.com",
+							"description": "Email",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"description": "Password",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "password",
+							"description": "Same: Password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "Lumen Version Description"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "kautsaralbaa@gmail.com",
+							"description": "registered email",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"description": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				},
+				"description": "Login User"
+			},
+			"response": []
+		},
+		{
+			"name": "User - Find",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxOTgxMTczMSwiZXhwIjoxNjE5ODE1MzMxLCJuYmYiOjE2MTk4MTE3MzEsImp0aSI6IjdnVkFMZVVoUHQ4czIxdjUiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.vSk_yjSAuH52VG0S6v9qDo1zQd0VxpNhHqT8D2HivCY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "user_id",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user"
+					]
+				},
+				"description": "Find One User"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxOTgxMTczMSwiZXhwIjoxNjE5ODE1MzMxLCJuYmYiOjE2MTk4MTE3MzEsImp0aSI6IjdnVkFMZVVoUHQ4czIxdjUiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.vSk_yjSAuH52VG0S6v9qDo1zQd0VxpNhHqT8D2HivCY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout"
+					]
+				},
+				"description": "Logout User"
+			},
+			"response": []
+		},
+		{
+			"name": "User - Detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxOTgyNjQzMiwiZXhwIjoxNjE5ODMwMDMyLCJuYmYiOjE2MTk4MjY0MzIsImp0aSI6Imljd2pOWTRaUHNnd3RzelkiLCJzdWIiOjMxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.IUVHoq_4ii1ooliH0wC80Ih5eMclkzqYYIRPh5bJYsQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profile"
+					]
+				},
+				"description": "Show Current Profile"
+			},
+			"response": []
+		},
+		{
+			"name": "Product - List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxOTgxOTQ4MywiZXhwIjoxNjE5ODIzMDgzLCJuYmYiOjE2MTk4MTk0ODMsImp0aSI6Ikl4Y2pvZDd1aEdTRWhVR1ciLCJzdWIiOjMxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.7s38Qp3StrDjxWRuq9D0oiv8fNV6OpPhQ8osWne824I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product"
+					]
+				},
+				"description": "Product - List"
+			},
+			"response": []
+		},
+		{
+			"name": "Product - Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxOTgxOTQ4MywiZXhwIjoxNjE5ODIzMDgzLCJuYmYiOjE2MTk4MTk0ODMsImp0aSI6Ikl4Y2pvZDd1aEdTRWhVR1ciLCJzdWIiOjMxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.7s38Qp3StrDjxWRuq9D0oiv8fNV6OpPhQ8osWne824I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Laptop",
+							"description": "Product Name",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Macbook Air M1",
+							"description": "Product Description",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "Electronics",
+							"description": "Product Category",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "120",
+							"description": "Product Price",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/product/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product",
+						"create"
+					]
+				},
+				"description": "Create Product"
+			},
+			"response": []
+		},
+		{
+			"name": "Product - Find",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxOTgxOTQ4MywiZXhwIjoxNjE5ODIzMDgzLCJuYmYiOjE2MTk4MTk0ODMsImp0aSI6Ikl4Y2pvZDd1aEdTRWhVR1ciLCJzdWIiOjMxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.7s38Qp3StrDjxWRuq9D0oiv8fNV6OpPhQ8osWne824I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/product/detail/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product",
+						"detail",
+						"5"
+					]
+				},
+				"description": "Find a Product"
+			},
+			"response": []
+		},
+		{
+			"name": "Product - Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxOTgxOTQ4MywiZXhwIjoxNjE5ODIzMDgzLCJuYmYiOjE2MTk4MTk0ODMsImp0aSI6Ikl4Y2pvZDd1aEdTRWhVR1ciLCJzdWIiOjMxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.7s38Qp3StrDjxWRuq9D0oiv8fNV6OpPhQ8osWne824I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/product/delete/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product",
+						"delete",
+						"1"
+					]
+				},
+				"description": "Delete a Product"
+			},
+			"response": []
+		},
+		{
+			"name": "Product - Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxOTgxOTQ4MywiZXhwIjoxNjE5ODIzMDgzLCJuYmYiOjE2MTk4MTk0ODMsImp0aSI6Ikl4Y2pvZDd1aEdTRWhVR1ciLCJzdWIiOjMxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.7s38Qp3StrDjxWRuq9D0oiv8fNV6OpPhQ8osWne824I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_product",
+							"value": "5",
+							"description": "Id Product Update Target",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Remote TV",
+							"description": "Product Name",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Panasonic Remote",
+							"description": "Product Description",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "Electronics",
+							"description": "Product Category",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "8",
+							"description": "Product Price",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/product/update",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product",
+						"update"
+					]
+				},
+				"description": "Update a Product"
+			},
+			"response": []
+		},
+		{
+			"name": "Order - Payment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxOTgyNjQzMiwiZXhwIjoxNjE5ODMwMDMyLCJuYmYiOjE2MTk4MjY0MzIsImp0aSI6Imljd2pOWTRaUHNnd3RzelkiLCJzdWIiOjMxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.IUVHoq_4ii1ooliH0wC80Ih5eMclkzqYYIRPh5bJYsQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_id",
+							"value": "6",
+							"description": "Product ID",
+							"type": "text"
+						},
+						{
+							"key": "number",
+							"value": "4242 4242 4242 4242",
+							"description": "Card Number: https://stripe.com/docs/testing#cards",
+							"type": "text"
+						},
+						{
+							"key": "exp_month",
+							"value": "02",
+							"description": "Expired Month Card Number (2 Digit Random)",
+							"type": "text"
+						},
+						{
+							"key": "exp_year",
+							"value": "22",
+							"description": "Expired Year Card Number (2 Digit greater than this year)",
+							"type": "text"
+						},
+						{
+							"key": "cvc",
+							"value": "123",
+							"description": "CVC Card Number (3 Digit Random)",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/order/store",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order",
+						"store"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
