@@ -21,10 +21,10 @@
 
     STRIPE_KEY=pk_test_51Im00MFThhqhD22mQEkl0k8k2LkqH9N23qajDtXFu8URuUoa8SwVN99hAxTPOXgQ43035euyveLYazHklkSJW4zX00a4ciBH0r
     STRIPE_SECRET=sk_test_51Im00MFThhqhD22m4jZePrNHZskXq10dtGmzpjx1XDlCTs3WnFlKmZO4WxwiMTK1BdGjVi19heSUZkq1HnBGJ8LT00jeyPzSQF
-    JWT_SECRET=l17dcLUkc4LOdM5huwdnSbJpGy53fLxDYVKKMtgYyruh9AAfudK6TkP3D7t3F1mo
     ```
     
 7. Migrate dan Seed Data ke Database `php artisan migrate:fresh --seed`
+8. Masukkan command `php artisan jwt:secret`
 
 ---
 
@@ -36,7 +36,13 @@
 php -S localhost:8000 -t public
 ```
 
-* Buka Postman dan Import file `LumenPaymentGateway.postman_collection.json`. Happy Testing!
+* Buka Postman dan Import file `LumenPaymentGateway.postman_collection.json`.
+* 1. Lakukan Registrasi API
+* 2. Lakukan Login API
+* 3. Copy Token hasil Login API
+* 4. Masukan kedalam kolom token Bearer Authentication disetiap API yang tersedia.
+* 5. localhost:8000/api/order/store adalah API untuk melakukan Payment
+**Happy Testing!
 
 # Lumen PHP Framework
 
