@@ -27,11 +27,14 @@ class ProductController extends Controller
         $product->category =  $request->category;
         $product->price =  $request->price;
         $product->save();
-        return response()->json('Create Product Success');
+        return response()->json([
+            'message' => 'Create Product Success'
+        ], 200);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
+        $id = $request->id_product;
         $product = Product::find($id);
         $product->name =  $request->name;
         $product->description =  $request->description;
@@ -39,7 +42,10 @@ class ProductController extends Controller
         $product->price =  $request->price;
         $product->save();
 
-        return response()->json($product);
+        return response()->json([
+            'message' => 'Data successfully updated',
+            'data' => $product,
+        ], 200);
     }
 
     public function delete($id)
@@ -47,6 +53,9 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product->delete();
 
-        return response()->json($product);
+        return response()->json([
+            'message' => 'Data successfully deleted',
+            'data' => $product,
+        ], 200);
     }
 }

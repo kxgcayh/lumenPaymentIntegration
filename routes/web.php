@@ -35,7 +35,12 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->get('/', 'ProductController@index');
         $router->post('/create', 'ProductController@create');
         $router->get('/detail/{id}', 'ProductController@show');
-        $router->put('/update/{id}', 'ProductController@update');
+        $router->post('/update', 'ProductController@update');
         $router->delete('/delete/{id}', 'ProductController@delete');
+    });
+
+    $router->group(['prefix' => 'order'], function () use ($router) {
+        $router->get('/', 'OrderController@index');
+        $router->post('/store', 'OrderController@postPayStripe');
     });
 });
