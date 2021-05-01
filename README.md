@@ -1,3 +1,4 @@
+![stripe-payments-section](https://raw.githubusercontent.com/kxgcayh/lumenPaymentIntegration/main/doccuments/SuccessPaymentStrip.png)
 ## Instalasi
 
 1. Buka Command Prompt atau Terminal
